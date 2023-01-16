@@ -14,20 +14,25 @@ class ExamController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var tableView: UITableView!
 
+    private var questionsArray: [Question] = [Question]()
+    let questionService = QuestionService()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.backgroundColor = .red
+        questionsArray = questionService.getAll()
+        tableView.reloadData()
 
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return questionsArray.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
+        cell.textLabel?.text = questionsArray[indexPath.row].text
         return cell
     }
 }
