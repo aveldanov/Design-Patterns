@@ -16,7 +16,6 @@ class ExamController: UIViewController {
 
         let question = Question(text: "Quesiton 1", point: 2, isCorrect: true)
         questionView.questionLabel.text = question.text
-        
     }
 }
 
