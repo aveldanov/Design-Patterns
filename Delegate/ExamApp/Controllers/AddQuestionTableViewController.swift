@@ -8,11 +8,21 @@
 
 import UIKit
 
+
+protocol AddQuesitonDelegate {
+    // list of methods that VC that conforming to it should implement
+    // passing controller - for the ExamController to be able to dismiss AddQuestionTableViewController
+    func addQuestionDidSaveQuestion(question: Question, controller: UITableViewController)
+
+}
+
 class AddQuestionTableViewController: UITableViewController {
 
     @IBOutlet weak var questionTextField: UITextField!
     @IBOutlet weak var pointTextField: UITextField!
     @IBOutlet weak var isCorrectSegmentedControl: UISegmentedControl!
+
+    var delegate: AddQuesitonDelegate!
 
     private var isCorrect: Bool = false
 
@@ -37,7 +47,10 @@ class AddQuestionTableViewController: UITableViewController {
 
         // force unwrap for simplicity
         let text = questionTextField.text!
-        let point = Double(questionTextField.text!)!
+        let point = Double(pointTextField.text!)!
+        
         let newQuestion = Question(text: text, point: point, isCorrect: isCorrect)
+
+        delegate.addQuestionDidSaveQuestion(question: newQuestion, controller: self)
     }
 }

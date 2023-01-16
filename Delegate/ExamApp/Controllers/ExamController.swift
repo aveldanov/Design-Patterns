@@ -10,7 +10,10 @@ import UIKit
 // Providing Data for the tableView
 // Responsibility of the UITableViewDataSource and UITableViewDelegate is Delegated to this Controller
 
-class ExamController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+// THIS IS A DELEGATE OF AddQuesitonController
+class ExamController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddQuesitonDelegate {
+
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -22,7 +25,30 @@ class ExamController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         questionsArray = questionService.getAll()
         tableView.reloadData()
+    }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       guard let navController = segue.destination as? UINavigationController else {
+           return
+        }
+
+        guard let addQuestionTableViewController = navController.viewControllers.first as? AddQuestionTableViewController else {
+            return
+        }
+
+        addQuestionTableViewController.delegate = self
+
+    }
+
+    func addQuestionDidSaveQuestion(question: Question, controller: UITableViewController) {
+        questionService.add(question: question)
+        controller.dismiss(animated: true, completion: nil)
+
+        questionsArray = questionService.getAll()
+
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
