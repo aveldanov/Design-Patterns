@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,13 +16,37 @@
                     <view key="view" contentMode="scaleToFill" id="lbY-Zt-PM0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wm4-2b-o5U">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="loZ-bL-gdv" id="UB4-0b-wcp"/>
+                                    <outlet property="delegate" destination="loZ-bL-gdv" id="O12-al-FE1"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="SIs-7Z-xMg"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wm4-2b-o5U" firstAttribute="leading" secondItem="SIs-7Z-xMg" secondAttribute="leading" id="K1c-eQ-4DK"/>
+                            <constraint firstItem="SIs-7Z-xMg" firstAttribute="trailing" secondItem="wm4-2b-o5U" secondAttribute="trailing" id="UDJ-E9-UPU"/>
+                            <constraint firstItem="wm4-2b-o5U" firstAttribute="top" secondItem="SIs-7Z-xMg" secondAttribute="top" id="adB-32-beF"/>
+                            <constraint firstItem="SIs-7Z-xMg" firstAttribute="bottom" secondItem="wm4-2b-o5U" secondAttribute="bottom" id="og4-XQ-N6w"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="wm4-2b-o5U" id="tU8-9s-eYJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jKq-OZ-IhM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-19" y="-6"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
