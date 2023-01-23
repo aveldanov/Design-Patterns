@@ -14,6 +14,7 @@ protocol AddQuesitonDelegate {
     // passing controller - for the ExamController to be able to dismiss AddQuestionTableViewController
     func addQuestionDidSaveQuestion(question: Question, controller: UITableViewController)
 
+    func closeButtonDidClose(controller: UITableViewController)
 }
 
 class AddQuestionTableViewController: UITableViewController {
@@ -40,6 +41,8 @@ class AddQuestionTableViewController: UITableViewController {
 
 
     @IBAction func close() {
+
+        delegate.closeButtonDidClose(controller: self)
 
     }
 

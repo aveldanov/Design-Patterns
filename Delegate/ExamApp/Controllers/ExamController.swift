@@ -15,6 +15,8 @@ import UIKit
 class ExamController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddQuesitonDelegate {
 
 
+
+
     @IBOutlet weak var tableView: UITableView!
 
     private var questionsArray: [Question] = [Question]()
@@ -50,6 +52,12 @@ class ExamController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.tableView.reloadData()
         }
     }
+
+
+    func closeButtonDidClose(controller: UITableViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return questionsArray.count
