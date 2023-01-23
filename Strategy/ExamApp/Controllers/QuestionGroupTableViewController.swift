@@ -22,16 +22,13 @@ class QuestionGroupTableViewController :UITableViewController {
     }
     
     private func getQuestionGroups() -> [QuestionGroup] {
-        
         return [
             QuestionGroup(displayName: "Math", course: .math, sourceType: .json),
             QuestionGroup(displayName: "Geography", course: .geography, sourceType: .xml)
         ]
-        
     }
     
     private func setupUI() {
-        
         self.navigationController?.navigationBar.prefersLargeTitles = true
     }
 

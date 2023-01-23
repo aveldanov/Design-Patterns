@@ -19,5 +19,4 @@ struct QuestionGroup {
     var displayName: String
     var course: Course
     var sourceType: SourceType = .json
-    
 }
