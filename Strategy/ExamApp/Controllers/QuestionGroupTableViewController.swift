@@ -1,19 +1,14 @@
 //
 //  QuestionGroupTableViewController.swift
 //  ExamApp
-//
-//  Created by Mohammad Azam on 9/4/18.
-//  Copyright © 2018 Mohammad Azam. All rights reserved.
-//
 
-import Foundation
 import UIKit
 
 class QuestionGroupTableViewController :UITableViewController {
     
     private var questionGroups = [QuestionGroup]()
     
-    lazy var cellBackgroundView :UIView = {
+    lazy var cellBackgroundView: UIView = {
        let view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 100))
         view.backgroundColor =  UIColor(displayP3Red: 22/255, green: 160/255, blue: 133/255, alpha: 1.0)
         return view
@@ -29,8 +24,8 @@ class QuestionGroupTableViewController :UITableViewController {
     private func getQuestionGroups() -> [QuestionGroup] {
         
         return [
-            QuestionGroup(displayName : "Math", course :.math, sourceType : .json),
-            QuestionGroup(displayName : "Geography", course: .geography, sourceType: .xml)
+            QuestionGroup(displayName: "Math", course: .math, sourceType: .json),
+            QuestionGroup(displayName: "Geography", course: .geography, sourceType: .xml)
         ]
         
     }

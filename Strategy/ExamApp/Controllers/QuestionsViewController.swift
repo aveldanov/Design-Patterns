@@ -1,19 +1,14 @@
 //
 //  QuestionsTableViewController.swift
 //  ExamApp
-//
-//  Created by Mohammad Azam on 9/4/18.
-//  Copyright © 2018 Mohammad Azam. All rights reserved.
-//
 
-import Foundation
 import UIKit
 
-class QuestionsViewController :UIViewController {
+class QuestionsViewController: UIViewController {
     
-    @IBOutlet weak var questionTextLabel :UILabel! 
+    @IBOutlet weak var questionTextLabel: UILabel!
     
-    var questionGroup :QuestionGroup!
+    var questionGroup: QuestionGroup!
     private var questions = [Question]()
     
     
