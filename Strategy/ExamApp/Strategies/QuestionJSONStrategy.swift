@@ -12,8 +12,8 @@ import Foundation
 class QuestionJSONStrategy: QuestionStrategy {
 
     var questions: [Question] = [Question]()
-
     var questionIndex: Int = 0
+    var currentQuestion: Question!
 
     required init(name: String) {
         if let path = Bundle.main.path(forResource: name, ofType: "json") {
@@ -27,7 +27,15 @@ class QuestionJSONStrategy: QuestionStrategy {
     }
 
     func nextQuestion() -> Question {
-        return Question(text: "", point: 0, isCorrect: true)
+
+        if questionIndex >= questions.count {
+            return self.currentQuestion
+        }
+
+        self.currentQuestion = questions[questionIndex]
+        questionIndex += 1
+
+        return currentQuestion
     }
 
 
