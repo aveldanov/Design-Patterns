@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34401528297E56C700E75BCB /* math.json in Resources */ = {isa = PBXBuildFile; fileRef = 34401527297E56C700E75BCB /* math.json */; };
+		3440152A297E579A00E75BCB /* QuestionXMLStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34401529297E579A00E75BCB /* QuestionXMLStrategy.swift */; };
+		34B9ACC0297E54C0006241BB /* QuestionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B9ACBF297E54C0006241BB /* QuestionStrategy.swift */; };
+		34B9ACC2297E5565006241BB /* QuestionJSONStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B9ACC1297E5565006241BB /* QuestionJSONStrategy.swift */; };
 		8D592FA82140343700F12306 /* QuestionGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D592FA72140343700F12306 /* QuestionGroup.swift */; };
 		8DE57217213F648B006B06BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE57216213F648B006B06BD /* AppDelegate.swift */; };
 		8DE57219213F648B006B06BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE57218213F648B006B06BD /* ViewController.swift */; };
@@ -19,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34401527297E56C700E75BCB /* math.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = math.json; sourceTree = "<group>"; };
+		34401529297E579A00E75BCB /* QuestionXMLStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionXMLStrategy.swift; sourceTree = "<group>"; };
+		34B9ACBF297E54C0006241BB /* QuestionStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionStrategy.swift; sourceTree = "<group>"; };
+		34B9ACC1297E5565006241BB /* QuestionJSONStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionJSONStrategy.swift; sourceTree = "<group>"; };
 		8D592FA72140343700F12306 /* QuestionGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionGroup.swift; sourceTree = "<group>"; };
 		8DE57213213F648B006B06BD /* ExamApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExamApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE57216213F648B006B06BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +51,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34B9ACBE297E548B006241BB /* Strategies */ = {
+			isa = PBXGroup;
+			children = (
+				34B9ACBF297E54C0006241BB /* QuestionStrategy.swift */,
+				34B9ACC1297E5565006241BB /* QuestionJSONStrategy.swift */,
+				34401529297E579A00E75BCB /* QuestionXMLStrategy.swift */,
+			);
+			path = Strategies;
+			sourceTree = "<group>";
+		};
+		34B9ACC3297E55B9006241BB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				34401527297E56C700E75BCB /* math.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		8DE5720A213F648B006B06BD = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +88,8 @@
 		8DE57215213F648B006B06BD /* ExamApp */ = {
 			isa = PBXGroup;
 			children = (
+				34B9ACC3297E55B9006241BB /* Resources */,
+				34B9ACBE297E548B006241BB /* Strategies */,
 				8DE57229213F64E0006B06BD /* Models */,
 				8DE57228213F64D9006B06BD /* Controllers */,
 				8DE57216213F648B006B06BD /* AppDelegate.swift */,
@@ -153,6 +181,7 @@
 				8DE57221213F648C006B06BD /* LaunchScreen.storyboard in Resources */,
 				8DE5721E213F648C006B06BD /* Assets.xcassets in Resources */,
 				8DE5721C213F648B006B06BD /* Main.storyboard in Resources */,
+				34401528297E56C700E75BCB /* math.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,10 +194,13 @@
 			files = (
 				8DE57219213F648B006B06BD /* ViewController.swift in Sources */,
 				8DE57217213F648B006B06BD /* AppDelegate.swift in Sources */,
+				34B9ACC2297E5565006241BB /* QuestionJSONStrategy.swift in Sources */,
 				8D592FA82140343700F12306 /* QuestionGroup.swift in Sources */,
 				8DE57232213F8090006B06BD /* Question.swift in Sources */,
+				3440152A297E579A00E75BCB /* QuestionXMLStrategy.swift in Sources */,
 				8DE5722B213F64F1006B06BD /* QuestionGroupTableViewController.swift in Sources */,
 				8DE5722E213F7CD8006B06BD /* QuestionsViewController.swift in Sources */,
+				34B9ACC0297E54C0006241BB /* QuestionStrategy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,7 +353,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.azamsharp.ExamApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aveldanov.ExamApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -339,7 +371,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.azamsharp.ExamApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aveldanov.ExamApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
