@@ -31,5 +31,3 @@ class QuestionView: UIView {
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
 }
-
-
