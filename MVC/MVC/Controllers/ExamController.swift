@@ -18,4 +18,3 @@ class ExamController: UIViewController {
         questionView.questionLabel.text = question.text
     }
 }
-
