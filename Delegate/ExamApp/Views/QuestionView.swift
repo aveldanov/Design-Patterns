@@ -22,11 +22,9 @@ class QuestionView :UIView {
     }
     
     private func commonInit() {
-        
         Bundle.main.loadNibNamed("QuestionView", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
-    
 }

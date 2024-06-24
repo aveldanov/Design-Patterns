@@ -10,5 +10,4 @@ struct Question {
     var text :String
     var point :Double
     var isCorrect :Bool
-    
 }

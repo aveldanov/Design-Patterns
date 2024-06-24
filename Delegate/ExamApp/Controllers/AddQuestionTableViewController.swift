@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 protocol AddQuesitonDelegate {
     // list of methods that VC that conforming to it should implement
     // passing controller - for the ExamController to be able to dismiss AddQuestionTableViewController
@@ -33,15 +32,12 @@ class AddQuestionTableViewController: UITableViewController {
         isCorrectSegmentedControl.removeTarget(self, action: #selector(isCorrectSegmentControlSelected), for: .touchUpInside)
     }
 
-
-
-    @objc func isCorrectSegmentControlSelected(segmentedControl: UISegmentedControl) {
+    @objc
+    func isCorrectSegmentControlSelected(segmentedControl: UISegmentedControl) {
         isCorrect = segmentedControl.selectedSegmentIndex == 0 ? true : false
     }
 
-
     @IBAction func close() {
-
         delegate.closeButtonDidClose(controller: self)
 
     }

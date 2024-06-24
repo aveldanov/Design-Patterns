@@ -14,9 +14,6 @@ import UIKit
 // THIS IS A DELEGATE OF AddQuesitonController
 class ExamController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddQuesitonDelegate {
 
-
-
-
     @IBOutlet weak var tableView: UITableView!
 
     private var questionsArray: [Question] = [Question]()
@@ -39,7 +36,6 @@ class ExamController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
 
         addQuestionTableViewController.delegate = self
-
     }
 
     func addQuestionDidSaveQuestion(question: Question, controller: UITableViewController) {
@@ -53,11 +49,9 @@ class ExamController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
 
-
     func closeButtonDidClose(controller: UITableViewController) {
         controller.dismiss(animated: true, completion: nil)
     }
-
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return questionsArray.count
